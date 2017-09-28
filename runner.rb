@@ -1,8 +1,25 @@
-require 'pp'#print and uts para estilizar o output#runner no caso seria a Main do projeto
-require_relative 'user'#como é a main tudo de user está aqui para ser usado
+require 'pp'
 
-user = User.new 'tk@exemple.com', 'Tarkus'
+require_relative 'user'
 
-pp user  #para printar o user
+puts "---------------------------------------------------"
+puts "Hey you there, come here, we have options for you:"
+puts "---------------------------------------------------"
+puts "1 - registration"
+puts "2 - exit the program"
 
-user.save #save para salvar o usuario
+asw = gets.chomp
+
+if asw == "1"
+  while asw == "1"
+    print "Name:"
+    name = gets.chomp
+    print "Email:"
+    email = gets.chomp
+    user = User.new(email, name)
+    user.save
+    puts "Thaks #{name.capitalize} for your registration"
+    puts 'Do you want to register another user?(1 for yes and 2 to exit)'
+    asw = gets.chomp
+  end
+end
