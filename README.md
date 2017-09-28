@@ -1,1 +1,1 @@
-# section2_json_project educative code
+# section2_json_project
